@@ -32,7 +32,8 @@
               class="text-left flex w-full mt-4 bg-[#20293a] hover:bg-[#273042] py-4 rounded-lg"
               v-for="v in sites"
             >
-              <img style="max-width:100px;" class="rounded-lg ml-2 saturate-100" src="./icon/logo.png" />
+              <img v-if="v.type=='openai'" style="max-width:100px;" class="rounded-lg ml-2 saturate-100" src="./icon/logo.png" />
+              <img v-if="v.type=='claude'" style="max-width:100px;" class="rounded-lg ml-2 saturate-100" src="./icon/claude.png" />
               <div class="grid grid-cols-1 ml-2 w-full">
                 <div class="w-full flex justify-between">
                   <span
@@ -94,18 +95,21 @@
               {
                 name: "chatgpt4.0",
                 url: "https://chat11.chatxyz.online",
+                type:"openai",
                 status: "可用",
               },
               {
                 name: "chatgpt4.0(备用)",
                 url: "https://chat5.chatxyz.online",
+                type:"openai",
                 status: "可用",
               },
-              // {
-              //   name: "claude3",
-              //   url: "https://claude.chatxyz.online",
-              //   status: "可用",
-              // },
+              {
+                name: "claude3",
+                url: "https://claude.chatxyz.online",
+                type:"claude",
+                status: "可用",
+              },
             ],
           };
         },
